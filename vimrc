@@ -73,3 +73,5 @@ set guifont=Menlo:h12
 set guioptions-=r
 set guioptions-=L
 
+" javascript settings
+let g:jsx_ext_required = 0
