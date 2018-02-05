@@ -19,8 +19,33 @@ set smartindent
 set shiftwidth=2
 set softtabstop=2
 
-" Plugins
-let &runtimepath.=',$HOME/.vim/bundle/Vundle.vim'
+" fix default regex handling so that \v isn't inserted before searches
+nnoremap / /\v
+vnoremap / /\v
+
+" if searching with all lower case, be case-insensitive, else be case-sensitive
+set ignorecase
+set smartcase
+
+" highlight search results as you type
+set incsearch
+set showmatch
+set hlsearch
+
+" remap the <leader> key from \ to ,
+let mapleader = ","
+" ,<space> will clear search/highlighting
+nnoremap <leader><space> :noh<cr>
+" ,w will open a new vertical split and switch over to it
+nnoremap <leader>w <C-w>v<c-w>l
+" mappings for easily navigating splits
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
@@ -37,6 +62,9 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'morhetz/gruvbox'
 Plugin 'vimwiki/vimwiki'
+Plugin 'elixir-editors/vim-elixir'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
 
 call vundle#end()
 
@@ -52,17 +80,13 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " mark column 80
 set colorcolumn=80
 highlight colorcolumn ctermbg=green guibg=green
-"highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
-"match OverLength /\%>80v.\+/
 
 set background=dark
-colorscheme gruvbox
-"colorscheme OceanicNext
-"colorscheme SerialExperimentsLain
+colorscheme flattened_dark
 
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline_theme='luna'
-let g:airline_theme='gruvbox'
+"let g:airline_theme='luna'
+let g:airline_solarized_bd='dark'
 
 
 " ctrlp settings
