@@ -107,6 +107,7 @@ alias resolution='system_profiler SPDisplaysDataType | grep Resolution'
 alias mci='mvn -DskipTests clean install'
 alias run='./run.sh'
 alias cvqa='mvn clean verify -Pintegration,wro4j'
+alias gdc="git diff --color | cat"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
