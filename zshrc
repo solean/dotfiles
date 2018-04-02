@@ -106,6 +106,7 @@ alias resolution='system_profiler SPDisplaysDataType | grep Resolution'
 
 alias mci='mvn -DskipTests clean install'
 alias run='./run.sh'
+alias cvbuild='mvn clean package -Pwro4j,prod -DskipTests'
 alias cvqa='mvn clean verify -Pintegration,wro4j'
 alias gdc="git diff --color | cat"
 
