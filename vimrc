@@ -56,15 +56,17 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'gavocanov/vim-js-indent'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'metakirby5/codi.vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'morhetz/gruvbox'
 Plugin 'vimwiki/vimwiki'
 Plugin 'elixir-editors/vim-elixir'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-endwise'
+
+Plugin 'morhetz/gruvbox'
+Plugin 'liuchengxu/space-vim-dark'
 
 call vundle#end()
 
@@ -81,12 +83,14 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 set colorcolumn=80
 highlight colorcolumn ctermbg=green guibg=green
 
+" Theme settings
 set background=dark
-colorscheme flattened_dark
+"colorscheme flattened_dark
+colorscheme space-vim-dark
 
 let g:airline#extensions#tabline#enabled = 1
-"let g:airline_theme='luna'
-let g:airline_solarized_bd='dark'
+"let g:airline_solarized_bd='dark'
+let g:airline_theme='violet'
 
 
 " ctrlp settings
