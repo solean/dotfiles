@@ -50,7 +50,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
-Plugin 'ryanss/vim-hackernews'
 Plugin 'othree/yajs'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'gavocanov/vim-js-indent'
@@ -60,7 +59,6 @@ Plugin 'mxw/vim-jsx'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vimwiki/vimwiki'
-Plugin 'elixir-editors/vim-elixir'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-endwise'
@@ -103,3 +101,7 @@ set guioptions-=L
 
 " javascript settings
 let g:jsx_ext_required = 0
+
+" git settings
+let g:gitgutter_highlight_lines = 1
+
