@@ -36,6 +36,8 @@ set hlsearch
 let mapleader = ","
 " ,<space> will clear search/highlighting
 nnoremap <leader><space> :noh<cr>
+" ,g will toggle gitgutter line highlighting
+nnoremap <leader>g :GitGutterLineHighlightsToggle<cr>
 " ,w will open a new vertical split and switch over to it
 nnoremap <leader>w <C-w>v<c-w>l
 " mappings for easily navigating splits
