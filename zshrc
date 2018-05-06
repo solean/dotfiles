@@ -109,6 +109,8 @@ alias run='./run.sh'
 alias cvbuild='mvn clean package -Pwro4j,prod -DskipTests'
 alias cvqa='mvn clean verify -Pintegration,wro4j'
 alias gdc="git diff --color | cat"
+alias vrc="vim ~/.vimrc"
+alias zrc="vim ~/.zshrc"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
