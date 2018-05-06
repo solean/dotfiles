@@ -1,0 +1,6 @@
+[user]
+	email = chrisjschnabel@gmail.com
+	name = Chris Schnabel
+[alias]
+	unstage = reset HEAD --
+	undo = reset --soft HEAD^
