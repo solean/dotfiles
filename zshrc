@@ -13,7 +13,8 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-export ANDROID_HOME=/Users/cschnabel/Library/Android/sdk
+export $JAVA_HOME=$(/usr/libexec/java_home)
+export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$ANDROID_HOME/platform-tools:$PATH
 export PATH=$ANDROID_HOME/tools:$PATH
 
