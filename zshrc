@@ -39,6 +39,7 @@ alias gdc="git diff --color | cat"
 alias vrc="vim ~/.vimrc"
 alias zrc="vim ~/.zshrc"
 alias stup="vim +'normal Go' +'r!date' ~/dev/did.txt"
+alias c="clear"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
