@@ -70,6 +70,7 @@ Plugin 'tomlion/vim-solidity'
 
 Plugin 'morhetz/gruvbox'
 Plugin 'liuchengxu/space-vim-dark'
+Plugin 'whatyouhide/vim-gotham'
 
 call vundle#end()
 
@@ -90,10 +91,12 @@ highlight colorcolumn ctermbg=green guibg=green
 set background=dark
 "colorscheme flattened_dark
 colorscheme space-vim-dark
+"colorscheme gotham
 
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_solarized_bd='dark'
 let g:airline_theme='violet'
+"let g:airline_theme='gotham'
 
 
 " ctrlp settings
