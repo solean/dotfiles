@@ -111,5 +111,5 @@ set guioptions-=L
 let g:jsx_ext_required = 0
 
 " git settings
-let g:gitgutter_highlight_lines = 1
+let g:gitgutter_highlight_lines = 0
 

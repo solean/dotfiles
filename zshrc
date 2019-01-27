@@ -23,7 +23,7 @@ export PATH="/Applications/Postgres.app/Contents/Versions/9.6/bin:$PATH"
 export PGDATABASE=clearview
 export PGUSER=clearview
 
-export M2_HOME=/usr/local/Cellar/maven/3.3.9/libexec
+export M2_HOME=/usr/local/Cellar/maven/3.6.0/libexec
 export MAVEN_OPTS="-Xms512m -Xmx512m -XX:PermSize=246m -XX:MaxPermSize=512m "
 export M2=$M2_HOME/bin
 export PATH=$M2:$PATH
@@ -39,6 +39,10 @@ alias gdc="git diff --color | cat"
 alias vrc="vim ~/.vimrc"
 alias zrc="vim ~/.zshrc"
 alias stup="vim +'normal Go' +'r!date' ~/dev/did.txt"
+alias c="clear"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+export PATH="$PATH:/usr/local/bin"
+
