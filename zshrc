@@ -47,5 +47,8 @@ alias ta="tmux attach -t"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
+# Rust bin path
+export PATH="$PATH:$HOME/.cargo/bin"
+
 export PATH="$PATH:/usr/local/bin"
 
