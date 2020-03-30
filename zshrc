@@ -43,6 +43,8 @@ alias c="clear"
 alias tl="tmux ls"
 alias tn="tmux new -t"
 alias ta="tmux attach -t"
+alias tk="tmux kill-session -t"
+alias tx="tmuxinator"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
