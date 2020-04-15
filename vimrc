@@ -52,6 +52,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'othree/yajs'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'gavocanov/vim-js-indent'
@@ -67,7 +68,9 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-commentary'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tomlion/vim-solidity'
-
+Plugin 'elzr/vim-json'
+Plugin 'ryanoasis/vim-devicons'
+" themes
 Plugin 'morhetz/gruvbox'
 Plugin 'liuchengxu/space-vim-dark'
 Plugin 'whatyouhide/vim-gotham'
@@ -90,12 +93,14 @@ highlight colorcolumn ctermbg=green guibg=green
 " Theme settings
 set background=dark
 "colorscheme flattened_dark
-colorscheme space-vim-dark
+"colorscheme space-vim-dark
 "colorscheme gotham
+colorscheme solarized
 
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='solarized'
 "let g:airline_solarized_bd='dark'
-let g:airline_theme='violet'
+"let g:airline_theme='violet'
 "let g:airline_theme='gotham'
 
 
