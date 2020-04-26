@@ -1,0 +1,15 @@
+# /Users/chrisschnabel/.config/tmuxinator/cv.yml
+
+name: cv
+root: ~/Softrek/clearview/
+
+
+windows:
+  - cv:
+      layout: main-vertical
+      panes:
+        - mci
+        - git status
+
+startup_window: cv
+startup_pane: 2
