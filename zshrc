@@ -48,6 +48,7 @@ alias tx="tmuxinator"
 
 # Suffix aliases
 alias -s git="git clone"
+alias -s out="tail -f"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
