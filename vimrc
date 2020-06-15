@@ -71,8 +71,9 @@ Plugin 'tomlion/vim-solidity'
 Plugin 'elzr/vim-json'
 Plugin 'ryanoasis/vim-devicons'
 " themes
-Plugin 'morhetz/gruvbox'
 Plugin 'liuchengxu/space-vim-dark'
+Plugin 'KeitaNakamura/neodark.vim'
+Plugin 'tyrannicaltoucan/vim-deep-space'
 Plugin 'whatyouhide/vim-gotham'
 
 call vundle#end()
@@ -92,17 +93,26 @@ highlight colorcolumn ctermbg=green guibg=green
 
 " Theme settings
 set background=dark
-"colorscheme flattened_dark
-"colorscheme space-vim-dark
-"colorscheme gotham
-colorscheme solarized
 
+if $ITERM_PROFILE == 'Gotham'
+  colorscheme gotham
+  let g:airline_theme='gotham'
+elseif $ITERM_PROFILE == 'space'
+  colorscheme space-vim-dark
+  let g:airline_theme='violet'
+elseif $ITERM_PROFILE == 'Deep Space'
+  colorscheme deep-space
+  let g:airline_theme='violet'
+elseif $ITERM_PROFILE == 'neodark'
+  colorscheme neodark
+else
+  colorscheme solarized
+  let g:airline_theme='solarized'
+  let g:airline_solarized_bd='dark'
+endif
+
+" airline settings
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='solarized'
-"let g:airline_solarized_bd='dark'
-"let g:airline_theme='violet'
-"let g:airline_theme='gotham'
-
 
 " ctrlp settings
 set wildignore+=*/node_modules/*,*/target/*
