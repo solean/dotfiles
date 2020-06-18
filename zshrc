@@ -58,3 +58,8 @@ export PATH="$PATH:$HOME/.cargo/bin"
 
 export PATH="$PATH:/usr/local/bin"
 
+# function for changing iTerm Profile
+function iterm-profile() {
+  echo -e "\033]50;SetProfile=$1\a"
+  ITERM_PROFILE=$1
+}
