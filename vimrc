@@ -18,6 +18,7 @@ set autoindent
 set smartindent
 set shiftwidth=2
 set softtabstop=2
+set splitbelow
 
 " fix default regex handling so that \v isn't inserted before searches
 nnoremap / /\v
