@@ -76,6 +76,7 @@ Plugin 'liuchengxu/space-vim-dark'
 Plugin 'KeitaNakamura/neodark.vim'
 Plugin 'tyrannicaltoucan/vim-deep-space'
 Plugin 'whatyouhide/vim-gotham'
+Plugin 'ghifarit53/tokyonight-vim'
 
 call vundle#end()
 
@@ -106,6 +107,11 @@ elseif $ITERM_PROFILE == 'Deep Space'
   let g:airline_theme='violet'
 elseif $ITERM_PROFILE == 'neodark'
   colorscheme neodark
+elseif $ITERM_PROFILE == 'Tokyo'
+  set termguicolors
+  colorscheme tokyonight
+  let g:tokyonight_style='night' " available: night, storm
+  let g:airline_theme='tokyonight'
 else
   colorscheme solarized
   let g:airline_theme='solarized'
