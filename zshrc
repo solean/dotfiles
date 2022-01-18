@@ -45,6 +45,7 @@ alias tn="tmux new -t"
 alias ta="tmux attach -t"
 alias tk="tmux kill-session -t"
 alias tx="tmuxinator"
+alias cat="bat"
 
 # Suffix aliases
 alias -s git="git clone"
