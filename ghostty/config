@@ -1,0 +1,19 @@
+
+# theme = dark:Kanagawa Dragon,light:kanagawa_lotus.txt
+theme = dark:Kanagawa Dragon,light:kanagawa_lotus.txt
+# theme = dark:bamboo.txt,light:bamboo_light.txt
+
+font-family = Fira Code
+font-thicken = true
+
+window-padding-x = 10
+# window-padding-y = 10
+
+cursor-style = underline
+
+clipboard-read = allow
+clipboard-write = allow
+copy-on-select = true
+
+mouse-hide-while-typing = true
+
