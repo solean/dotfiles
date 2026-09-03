@@ -4,6 +4,11 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/cschnabel/.oh-my-zsh
 
+# Use Neovim for programs that invoke a terminal editor.
+export EDITOR=nvim
+export VISUAL=nvim
+export GIT_EDITOR=nvim
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
