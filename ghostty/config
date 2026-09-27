@@ -1,6 +1,6 @@
 
 # theme = dark:Kanagawa Dragon,light:kanagawa_lotus.txt
-theme = dark:Kanagawa Dragon,light:kanagawa_lotus.txt
+theme = dark:bamboo.txt,light:bamboo_light.txt
 # theme = dark:bamboo.txt,light:bamboo_light.txt
 
 font-family = Fira Code

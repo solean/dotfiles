@@ -1,0 +1,69 @@
+#!/bin/sh
+set -eu
+
+config=${XDG_CONFIG_HOME:-"$HOME/.config"}/ghostty/config
+nvim_config=${XDG_CONFIG_HOME:-"$HOME/.config"}/nvim/lua/plugins/themes.lua
+current=$(/usr/bin/sed -n 's/^[[:space:]]*theme[[:space:]]*=[[:space:]]*//p' "$config")
+nvim_current=$(/usr/bin/sed -n 's/^[[:space:]]*colorscheme[[:space:]]*=[[:space:]]*"\([^"]*\)",[[:space:]]*$/\1/p' "$nvim_config")
+requested=${1:-next}
+
+if [ "$#" -gt 1 ]; then
+    printf 'Usage: theme-cycle [tokyo|kanagawa|bamboo]\n' >&2
+    exit 2
+fi
+
+if [ -z "$nvim_current" ]; then
+    printf 'No active Neovim colorscheme found in %s\n' "$nvim_config" >&2
+    exit 1
+fi
+
+case "$requested" in
+    next)
+        case "$current" in
+            'dark:TokyoNight,light:TokyoNight Day') requested=kanagawa ;;
+            'dark:Kanagawa Dragon,light:kanagawa_lotus.txt') requested=bamboo ;;
+            'dark:bamboo.txt,light:bamboo_light.txt') requested=tokyo ;;
+            *) requested=tokyo ;;
+        esac
+        ;;
+    tokyo|tokyonight) requested=tokyo ;;
+    kanagawa|bamboo) ;;
+    -h|--help)
+        printf 'Usage: theme-cycle [tokyo|kanagawa|bamboo]\n'
+        exit 0
+        ;;
+    *)
+        printf 'Unknown theme set: %s\n' "$requested" >&2
+        printf 'Usage: theme-cycle [tokyo|kanagawa|bamboo]\n' >&2
+        exit 2
+        ;;
+esac
+
+case "$requested" in
+    tokyo)
+        name=Tokyo
+        pair='dark:TokyoNight,light:TokyoNight Day'
+        nvim_theme=tokyonight-night
+        ;;
+    kanagawa)
+        name=Kanagawa
+        pair='dark:Kanagawa Dragon,light:kanagawa_lotus.txt'
+        nvim_theme=kanagawa-dragon
+        ;;
+    bamboo)
+        name=Bamboo
+        pair='dark:bamboo.txt,light:bamboo_light.txt'
+        if [ "$(osascript -e 'tell application "System Events" to tell appearance preferences to get dark mode')" = true ]; then
+            nvim_theme=bamboo-multiplex
+        else
+            nvim_theme=bamboo-light
+        fi
+        ;;
+esac
+
+/usr/bin/sed -i '' -e "s|^[[:space:]]*theme[[:space:]]*=.*$|theme = $pair|" "$config"
+/usr/bin/sed -i '' -e "s|^[[:space:]]*colorscheme[[:space:]]*=.*$|      colorscheme = \"$nvim_theme\",|" "$nvim_config"
+if command -v cmux >/dev/null 2>&1; then
+    cmux reload-config >/dev/null
+fi
+printf 'Theme set: %s\nNeovim: %s\n' "$name" "$nvim_theme"

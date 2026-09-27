@@ -1,0 +1,34 @@
+#!/bin/sh
+set -eu
+
+ghostty_config=${XDG_CONFIG_HOME:-"$HOME/.config"}/ghostty/config
+nvim_config=${XDG_CONFIG_HOME:-"$HOME/.config"}/nvim/lua/plugins/themes.lua
+
+mode=$(osascript <<'APPLESCRIPT'
+tell application "System Events"
+    tell appearance preferences
+        set dark mode to not dark mode
+        if dark mode then
+            return "dark"
+        else
+            return "light"
+        end if
+    end tell
+end tell
+APPLESCRIPT
+)
+
+terminal_theme=$(/usr/bin/sed -n 's/^[[:space:]]*theme[[:space:]]*=[[:space:]]*//p' "$ghostty_config")
+if [ "$terminal_theme" = 'dark:bamboo.txt,light:bamboo_light.txt' ]; then
+    if [ "$mode" = dark ]; then
+        nvim_theme=bamboo-multiplex
+    else
+        nvim_theme=bamboo-light
+    fi
+    /usr/bin/sed -i '' -e "s|^[[:space:]]*colorscheme[[:space:]]*=.*$|      colorscheme = \"$nvim_theme\",|" "$nvim_config"
+fi
+
+printf 'Appearance: %s\n' "$mode"
+if [ "${nvim_theme:-}" ]; then
+    printf 'Neovim: %s\n' "$nvim_theme"
+fi
