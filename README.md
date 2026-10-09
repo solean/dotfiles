@@ -5,7 +5,7 @@
 
 ## Theme setup on another Mac
 
-Install Ghostty, Neovim, and optionally cmux. Ghostty uses the built-in TokyoNight
+Install Ghostty, Neovim, and optionally cmux and herdr. Ghostty uses the built-in TokyoNight
 and Kanagawa Dragon themes, plus the four custom palettes in `ghostty/themes/`.
 The config also selects the Fira Code font. Neovim bootstraps lazy.nvim and
 downloads its plugins on first launch.
@@ -19,6 +19,7 @@ Clone this repository, then install these paths (back up existing files first):
 | `local/bin/theme-cycle`, `local/bin/theme-toggle` | `~/.local/bin/` |
 | `zshrc` | `~/.zshrc` |
 | `cmux/cmux.json` | `~/.config/cmux/cmux.json` |
+| `herdr/config.toml` | `~/.config/herdr/config.toml` |
 
 If cmux already has a config, merge only `app.appearance = "system"` and
 `browser.theme = "system"` rather than replacing unrelated settings. The shell
