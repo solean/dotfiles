@@ -5,8 +5,8 @@
 
 ## Theme setup on another Mac
 
-Install Ghostty, Neovim, and optionally cmux and herdr. Ghostty uses the built-in TokyoNight
-and Kanagawa Dragon themes, plus the four custom palettes in `ghostty/themes/`.
+Install Ghostty, Neovim, and optionally cmux and herdr. Ghostty uses the built-in TokyoNight,
+Kanagawa Dragon, and Selenized themes, plus the four custom palettes in `ghostty/themes/`.
 The config also selects the Fira Code font. Neovim bootstraps lazy.nvim and
 downloads its plugins on first launch.
 
@@ -28,10 +28,10 @@ Symlinking the Ghostty and Neovim directories into `~/.config` makes
 `theme-cycle` edit the repository copies; copying them instead keeps the
 repository unchanged when cycling.
 
-`theme-cycle` selects Tokyo, Kanagawa, or Bamboo (or accepts `tokyo`,
-`kanagawa`, or `bamboo` explicitly). It edits the Ghostty theme pair and
+`theme-cycle` selects Tokyo, Kanagawa, Bamboo, or Selenized (or accepts `tokyo`,
+`kanagawa`, `bamboo`, or `selenized` explicitly). It edits the Ghostty theme pair and
 `nvim/lua/plugins/themes.lua`, then reloads cmux if it is installed.
-`theme-toggle` switches macOS light/dark appearance and, when Bamboo is
-selected, updates Neovim's Bamboo variant. Existing Neovim processes do not
+`theme-toggle` switches macOS light/dark appearance and, when Bamboo or Selenized is
+selected, updates Neovim's light/dark variant. Existing Neovim processes do not
 reload their colorscheme automatically. On first use macOS may ask for
 permission to control System Events.

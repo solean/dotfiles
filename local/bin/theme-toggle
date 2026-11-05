@@ -19,12 +19,23 @@ APPLESCRIPT
 )
 
 terminal_theme=$(/usr/bin/sed -n 's/^[[:space:]]*theme[[:space:]]*=[[:space:]]*//p' "$ghostty_config")
-if [ "$terminal_theme" = 'dark:bamboo.txt,light:bamboo_light.txt' ]; then
-    if [ "$mode" = dark ]; then
-        nvim_theme=bamboo-multiplex
-    else
-        nvim_theme=bamboo-light
-    fi
+case "$terminal_theme" in
+    'dark:bamboo.txt,light:bamboo_light.txt')
+        if [ "$mode" = dark ]; then
+            nvim_theme=bamboo-multiplex
+        else
+            nvim_theme=bamboo-light
+        fi
+        ;;
+    'dark:Selenized Black,light:Selenized Light')
+        if [ "$mode" = dark ]; then
+            nvim_theme=selenized_bw
+        else
+            nvim_theme=selenized
+        fi
+        ;;
+esac
+if [ "${nvim_theme:-}" ]; then
     /usr/bin/sed -i '' -e "s|^[[:space:]]*colorscheme[[:space:]]*=.*$|      colorscheme = \"$nvim_theme\",|" "$nvim_config"
 fi
 

@@ -8,7 +8,7 @@ nvim_current=$(/usr/bin/sed -n 's/^[[:space:]]*colorscheme[[:space:]]*=[[:space:
 requested=${1:-next}
 
 if [ "$#" -gt 1 ]; then
-    printf 'Usage: theme-cycle [tokyo|kanagawa|bamboo]\n' >&2
+    printf 'Usage: theme-cycle [tokyo|kanagawa|bamboo|selenized]\n' >&2
     exit 2
 fi
 
@@ -22,19 +22,20 @@ case "$requested" in
         case "$current" in
             'dark:TokyoNight,light:TokyoNight Day') requested=kanagawa ;;
             'dark:Kanagawa Dragon,light:kanagawa_lotus.txt') requested=bamboo ;;
-            'dark:bamboo.txt,light:bamboo_light.txt') requested=tokyo ;;
+            'dark:bamboo.txt,light:bamboo_light.txt') requested=selenized ;;
+            'dark:Selenized Black,light:Selenized Light') requested=tokyo ;;
             *) requested=tokyo ;;
         esac
         ;;
     tokyo|tokyonight) requested=tokyo ;;
-    kanagawa|bamboo) ;;
+    kanagawa|bamboo|selenized) ;;
     -h|--help)
-        printf 'Usage: theme-cycle [tokyo|kanagawa|bamboo]\n'
+        printf 'Usage: theme-cycle [tokyo|kanagawa|bamboo|selenized]\n'
         exit 0
         ;;
     *)
         printf 'Unknown theme set: %s\n' "$requested" >&2
-        printf 'Usage: theme-cycle [tokyo|kanagawa|bamboo]\n' >&2
+        printf 'Usage: theme-cycle [tokyo|kanagawa|bamboo|selenized]\n' >&2
         exit 2
         ;;
 esac
@@ -57,6 +58,15 @@ case "$requested" in
             nvim_theme=bamboo-multiplex
         else
             nvim_theme=bamboo-light
+        fi
+        ;;
+    selenized)
+        name=Selenized
+        pair='dark:Selenized Black,light:Selenized Light'
+        if [ "$(osascript -e 'tell application "System Events" to tell appearance preferences to get dark mode')" = true ]; then
+            nvim_theme=selenized_bw
+        else
+            nvim_theme=selenized
         fi
         ;;
 esac
